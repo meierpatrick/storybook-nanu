@@ -1,0 +1,39 @@
+.accordion {
+  display: block;
+}
+.accordion li {
+  list-style: none;
+}
+
+.accordion li label {
+  display: block;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+label::before {
+  content: "+";
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+ 
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 400px;
+}
+
+.accordion input[type="radio"]:checked + label::before {
+    content: "-";
+  }
